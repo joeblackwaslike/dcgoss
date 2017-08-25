@@ -1,0 +1,10 @@
+---
+target: examples/basic/Dockerfile
+---
+{% set docker_org = data.get('vars')['github']['org'] -%}
+
+FROM    {{ docker_org }}/debian:stretch
+
+RUN     echo hello > /tmp/test-file
+
+CMD     ["sleep", "999999"]

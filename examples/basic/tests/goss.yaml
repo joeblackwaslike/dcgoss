@@ -1,0 +1,9 @@
+file:
+  /tmp/test-file:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: staff
+    filetype: file
+    contains:
+    - hello

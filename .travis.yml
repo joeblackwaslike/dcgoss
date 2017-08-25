@@ -1,0 +1,29 @@
+addons:
+  apt:
+    packages:
+    - realpath
+language: python
+services: docker
+env:
+  global:
+  - GITHUB_USER=joeblackwaslike
+  - GITHUB_ORG=joeblackwaslike
+  - DOCKER_USER=joeblackwaslike
+  - DOCKER_ORG=joeblackwaslike
+  # DOCKER_PASS
+  - secure: 
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+before_install: source scripts/ci/environment.sh
+
+install: make build
+
+script: make test
+
+after_success:
+- ci-tag-build
+- hub-push
+- hub-update-readme
