@@ -34,6 +34,8 @@ VOLUME  ["/repo"]
 
 WORKDIR /repo
 
+ENV     GOSS_FILES_PATH tests
+
 ENTRYPOINT ["/dumb-init", "--"]
 
 CMD     ["dcgoss"]

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BASEDIR=$(dirname $0)
-TESTDIR=$(realpath $BASEDIR)
+TESTDIR=$(realpath $BASEDIR/..)
 IMAGE=${DOCKER_ORG:-joeblackwaslike}/dcgoss:latest
 COMMAND=$(basename $0)
 
