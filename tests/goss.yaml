@@ -7,7 +7,6 @@ file:
     filetype: directory
   /usr/local/bin/dcgoss:
     exists: true
-    mode: "0755"
     size:
       gt: 3000
     owner: root
