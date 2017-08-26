@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 DOCKER_ORG ?= joeblackwaslike
-DOCKER_REPO := dgoss-basic-example
+DOCKER_REPO := dcgoss-basic-example
 DOCKER_TAG := latest
 DOCKER_IMAGE := $(DOCKER_ORG)/$(DOCKER_REPO):$(DOCKER_TAG)
 
@@ -13,10 +13,10 @@ build:
 	docker build --force-rm -t $(DOCKER_IMAGE) .
 
 build-tests:
-	tests/edit $(DOCKER_IMAGE) tail -f /dev/null
+	tests/edit test
 
 test:
-	tests/run $(DOCKER_IMAGE) tail -f /dev/null
+	tests/run test
 
 push-image:
 	if [[ $(TRAVIS) == 'true' ]]; then \

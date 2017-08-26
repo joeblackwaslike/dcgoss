@@ -2,13 +2,13 @@
 
 BASEDIR=$(dirname $0)
 TESTDIR=$(realpath $BASEDIR)
-IMAGE=${DOCKER_ORG:-joeblackwaslike}/dgoss:latest
+IMAGE=${DOCKER_ORG:-joeblackwaslike}/dcgoss:latest
 COMMAND=$(basename $0)
 
 docker pull $IMAGE
 docker run -it --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -v $TESTDIR:/tests \
+    -v $TESTDIR:/repo \
     -v /tmp:/tmp \
     $IMAGE \
-    dgoss $COMMAND "$@"
+    dcgoss $COMMAND "$@"
