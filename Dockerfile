@@ -22,7 +22,7 @@ RUN     apt-get update -qq && \
             apt-get install -y python3 python3-pip && \
             apt-clean --aggressive
 
-RUN     pip3 install --update requests pip setuptools && \
+RUN     pip3 install --upgrade requests pip setuptools && \
             pip3 install docker-compose
 
 ADD     https://github.com/aelsabbahy/goss/releases/download/v${DGOSS_VERSION}/dgoss /usr/local/bin/
