@@ -5,7 +5,7 @@ description: |-
 github:
   user: joeblackwaslike
   org: joeblackwaslike
-  repo: docker-dcgoss
+  repo: dcgoss
 docker:
   user: joeblackwaslike
   org: joeblackwaslike
