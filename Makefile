@@ -29,7 +29,7 @@ test:
 	tests/run $(DOCKER_IMAGE) tail -f /dev/null
 
 push-image:
-	if [[ $(TRAVIS) == 'true' ]]; then \
+	if [[ $$TRAVIS == 'true' ]]; then \
 		docker login -u $(DOCKER_USER) -p $(DOCKER_PASS); \
 	fi
 	docker push $(DOCKER_IMAGE)
